@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Teknisi - E-Service Nanda Computer</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS Global Utama -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- CSS Khusus Teknisi -->
+    <link rel="stylesheet" href="css/teknisi.css">
+</head>
+<body class="dashboard-body">
+
+    <!-- Tambahkan div efek cahaya kursor jika diinginkan konsisten -->
+    <div class="mouse-glow"></div>
+
+    <!-- Top Navbar -->
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <!-- Ganti NC dengan logo jika diinginkan -->
+                <img src="img/logo.png" alt="Logo Nanda Computer" class="brand-logo-img" style="width: 44px; height: 44px; object-fit: contain; border-radius: 10px;">
+                <div>
+                    <h1>NANDA COMPUTER</h1>
+                    <p>Dashboard Teknisi | E-Service Nanda Computer</p>
+                </div>
+            </div>
+            <div class="nav-user">
+                <div class="user-info">
+                    <span class="user-name">Selamat datang, Teknisi!</span>
+                </div>
+                <button id="logoutBtn" class="btn-logout">Keluar</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        
+        <!-- Banner Sambutan -->
+        <section class="welcome-banner">
+            <div class="banner-text">
+                <h2>Ruang Kerja & Diagnosa Perangkat 🔧</h2>
+                <p>Pilih antrian perangkat masuk, lakukan pengecekan, input rincian tindakan perbaikan, serta kalkulasi biaya jasa dan sparepart.</p>
+            </div>
+            <div class="banner-date">
+                <span class="date-label">Antrian Masuk</span>
+                <span id="statAntrianCount" class="date-value">0 Unit</span>
+            </div>
+        </section>
+
+        <!-- Grid Utama: Tabel Antrian (Kiri) & Form Diagnosa (Kanan) -->
+        <div class="content-grid-teknisi">
+            
+            <!-- TABEL ANTRIAN MASUK -->
+            <div class="card table-card">
+                <div class="card-header">
+                    <h3>Antrian Perangkat (Menunggu Diagnosa)</h3>
+                    <p>Klik tombol "Pilih & Proses" untuk mulai menangani perangkat</p>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>No. Nota & Sumber</th>
+                                <th>Pelanggan & Unit</th>
+                                <th>Keluhan Awal</th>
+                                <th class="text-center">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelAntrianBody">
+                            <!-- Diisi oleh teknisi.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- FORM DIAGNOSA & BIAYA -->
+            <div class="card form-card">
+                <div class="card-header flex-header">
+                    <div>
+                        <h3>Form Diagnosa & Biaya</h3>
+                        <p>Rincian perbaikan teknisi</p>
+                    </div>
+                    <span id="badgeNotaAktif" class="nota-badge-inactive">Belum Dipilih</span>
+                </div>
+
+                <form id="formTeknisi" class="service-form">
+                    <div class="form-group">
+                        <label>Info Unit Dipilih</label>
+                        <input type="text" id="infoUnit" readonly placeholder="Pilih antrian dari tabel sebelah kiri..." style="background: #F1F5F9; cursor: not-allowed;">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Rincian Tindakan / Perbaikan *</label>
+                        <textarea id="tindakanInput" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Biaya Jasa (Rp) *</label>
+                            <input type="number" id="biayaJasa" required min="0" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label>Harga Sparepart (Rp) *</label>
+                            <input type="number" id="biayaSparepart" required min="0" value="0">
+                        </div>
+                    </div>
+
+                    <!-- Kalkulator Total Otomatis -->
+                    <div class="total-kalkulator-box">
+                        <div>
+                            <span class="calc-label">Total Biaya Servis</span>
+                            <span class="calc-sub">Jasa + Sparepart</span>
+                        </div>
+                        <div id="displayTotalBiaya" class="calc-value">Rp 0</div>
+                    </div>
+
+                    <button type="submit" id="btnSimpanDiagnosa" disabled class="btn-success">
+                        <span>Simpan & Ubah Status: Siap Diambil</span>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- JS Terpisah -->
+    <script src="js/teknisi.js"></script>
+</body>
+</html>

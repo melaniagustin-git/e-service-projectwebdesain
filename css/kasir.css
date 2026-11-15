@@ -1,0 +1,586 @@
+/* ==========================================================================
+   DASHBOARD KASIR STYLING (Soft Aero Blue Theme)
+   ========================================================================== */
+.dashboard-body {
+    background-color: var(--bg-canvas);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top Navbar */
+.top-navbar {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border-light);
+    position: sticky;
+    top: 0;
+    z-index: 40;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-brand h1 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.nav-brand p {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.nav-user {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.user-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.user-role {
+    font-size: 11px;
+    color: var(--blue-primary);
+    font-weight: 600;
+}
+
+.btn-logout {
+    padding: 8px 16px;
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+    color: #DC2626;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-logout:hover {
+    background: #DC2626;
+    color: white;
+}
+
+/* Main Container */
+.main-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 28px 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Welcome Banner */
+.welcome-banner {
+    background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 60%, #93C5FD 100%);
+    border-radius: var(--radius-xl);
+    padding: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.15);
+}
+
+.banner-text h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+}
+
+.banner-text p {
+    font-size: 13px;
+    color: #334155;
+    max-width: 600px;
+}
+
+.banner-date {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    padding: 12px 20px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    text-align: right;
+}
+
+.date-label {
+    display: block;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+.date-value {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    background: var(--surface-white);
+    padding: 22px 24px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    transition: transform 0.2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+}
+
+.stat-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.stat-number {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 4px;
+}
+
+.stat-number.amber { color: #D97706; }
+.stat-number.blue { color: var(--blue-primary); }
+.stat-number.green { color: #059669; }
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.amber-bg { background: #FEF3C7; color: #D97706; }
+.blue-bg { background: #EFF6FF; color: var(--blue-primary); }
+.green-bg { background: #ECFDF5; color: #059669; }
+
+/* Content Grid */
+.content-grid {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.card {
+    background: var(--surface-white);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-light);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 24px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.card-header h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.card-header p {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 3px;
+}
+
+.flex-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nota-badge {
+    padding: 6px 12px;
+    background: #0F172A;
+    color: #93C5FD;
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
+/* Form Styles */
+.service-form {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    background: #F8FAFC;
+    border: 1.5px solid var(--border-light);
+    border-radius: 12px;
+    font-size: 13px;
+    color: var(--text-dark);
+    transition: all 0.2s;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none;
+    background: #FFFFFF;
+    border-color: var(--blue-primary);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Table Styles */
+.search-box input {
+    padding: 10px 14px;
+    background: #F8FAFC;
+    border: 1.5px solid var(--border-light);
+    border-radius: 12px;
+    font-size: 12px;
+    width: 220px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    text-align: left;
+}
+
+.data-table th {
+    background: #F8FAFC;
+    padding: 14px 20px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.data-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-light);
+    color: #334155;
+    vertical-align: middle;
+}
+
+.data-table tbody tr:hover {
+    background: #F8FAFC;
+}
+
+/* Badge Status & Sumber */
+.badge-status {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 99px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.status-menunggu { background: #FEF3C7; color: #B45309; }
+.status-siap { background: #EFF6FF; color: var(--blue-primary); border: 1px solid #BFDBFE; }
+.status-lunas { background: #ECFDF5; color: #047857; }
+
+.source-badge {
+    font-size: 9px;
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-left: 4px;
+}
+.source-offline { background: #F1F5F9; color: #475569; }
+.source-online { background: #EEF2FF; color: #4F46E5; }
+
+/* Modal Styles */
+/* ==========================================================================
+   PERBAIKAN TOTAL MODAL PEMBAYARAN KASIR
+   ========================================================================== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* Pastikan z-index paling tinggi */
+    padding: 16px;
+}
+
+.modal-box {
+    background: #FFFFFF;
+    width: 100%;
+    max-width: 440px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    position: relative;
+    z-index: 10000;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+    padding-top: 8px;
+    position: relative;
+    z-index: 10001; /* Mengunci tombol agar selalu di lapisan teratas dan bisa diklik */
+}
+
+@keyframes scaleUp {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #0F172A 0%, var(--blue-primary) 100%);
+    color: white;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.modal-header h3 { font-size: 16px; font-weight: 700; margin: 0; }
+.modal-sub { font-size: 11px; color: #93C5FD; font-family: monospace; margin: 2px 0 0 0; }
+.modal-close { background: none; border: none; color: white; font-size: 24px; cursor: pointer; padding: 0; line-height: 1; }
+
+.modal-form {
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow-y: auto; /* Memungkinkan isi form digulir jika layar kecil */
+    flex-grow: 1;
+}
+
+.modal-info-box {
+    background: #F8FAFC;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 12px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-row {
+    border-top: 1px dashed var(--border-light);
+    padding-top: 6px;
+    margin-top: 2px;
+}
+
+.kembalian-box {
+    background: #0F172A;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 4px;
+    padding-top: 4px;
+    flex-shrink: 0;
+}
+
+.btn-secondary {
+    flex: 1;
+    padding: 12px;
+    background: #F1F5F9;
+    color: #334155;
+    border: 1px solid #CBD5E1;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+    background: #E2E8F0;
+}
+
+.btn-success {
+    flex: 1;
+    padding: 12px;
+    background: #059669;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+    transition: background 0.2s;
+}
+
+.btn-success:hover:not(:disabled) {
+    background: #047857;
+}
+
+.btn-success:disabled {
+    background: #CBD5E1;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+/* Print Receipt Styling */
+@media print {
+    body * { visibility: hidden; }
+    #printArea, #printArea * { visibility: visible; }
+    #printArea {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: white;
+        padding: 20px;
+    }
+}
+
+.print-receipt {
+    max-width: 380px;
+    margin: 0 auto;
+    font-family: monospace;
+    font-size: 11px;
+    color: black;
+}
+
+.receipt-header {
+    text-align: center;
+    border-bottom: 1.5px dashed #000;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+.receipt-header h2 { font-size: 14px; font-weight: bold; }
+.receipt-badge {
+    display: inline-block;
+    border: 1px solid #000;
+    padding: 2px 8px;
+    margin-top: 6px;
+    font-weight: bold;
+}
+
+.receipt-body, .receipt-footer-info {
+    border-bottom: 1.5px dashed #000;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.receipt-total {
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+.receipt-bottom-note {
+    text-align: center;
+}
+
+@media (max-width: 960px) {
+    .content-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: 1fr; }
+}
+/* Tambahan Styling untuk Dropdown Metode Pembayaran di Modal */
+#inputMetodeBayar {
+    width: 100%;
+    padding: 12px 14px;
+    background: #F8FAFC;
+    border: 1.5px solid var(--border-light);
+    border-radius: 12px;
+    font-size: 13px;
+    color: var(--text-dark);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+#inputMetodeBayar:focus {
+    outline: none;
+    background: #FFFFFF;
+    border-color: var(--blue-primary);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}

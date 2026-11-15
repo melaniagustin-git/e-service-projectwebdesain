@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin & Owner - E-Service Nanda Computer</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS Global & CSS Khusus Admin -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin & Owner - E-Service Nanda Computer</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS Global, Base Layout Dashboard & Khusus Admin -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/kasir.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body class="dashboard-body">
+<div class="mouse-glow"></div>
+
+    <!-- Top Navbar -->
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="img/logo.png" alt="Logo Nanda Computer" class="brand-logo-img">
+                <div>
+                    <h1>NANDA COMPUTER</h1>
+                    <p>Dashboard Admin / Owner | E-Service Nanda Computer</p>
+                </div>
+            </div>
+            <div class="nav-user">
+                <div class="user-info">
+                    <span class="user-name">Selamat datang, Admin!</span>
+                </div>
+                <button id="logoutBtn" class="btn-logout">Keluar</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        
+        <!-- Banner Sambutan Admin -->
+        <section class="welcome-banner admin-banner">
+            <div class="banner-text">
+                <h2>Pusat Kendali & Rekapitulasi Bisnis 📊</h2>
+                <p>Pantau total pendapatan toko, rekapitulasi unit servis masuk, dan performa operasional secara <em>real-time</em>.</p>
+            </div>
+            <div class="banner-date admin-date-box">
+                <span class="date-label">Status Sistem</span>
+                <span class="date-value text-emerald">🟢 Normal / Aktif</span>
+            </div>
+        </section>
+
+        <!-- Statistik Global Admin (KPI) -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-info">
+                    <span class="stat-title">Total Pendapatan Lunas</span>
+                    <span id="statPendapatan" class="stat-number green" style="font-size: 22px;">Rp 0</span>
+                </div>
+                <div class="stat-icon green-bg">💰</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-info">
+                    <span class="stat-title">Total Unit Masuk</span>
+                    <span id="statTotalUnit" class="stat-number blue">0</span>
+                </div>
+                <div class="stat-icon blue-bg">💻</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-info">
+                    <span class="stat-title">Servis Selesai</span>
+                    <span id="statSelesai" class="stat-number amber">0</span>
+                </div>
+                <div class="stat-icon amber-bg">✅</div>
+            </div>
+        </section>
+
+        <!-- Tabel Rekap Global Seluruh Servis -->
+        <div class="card table-card" style="width: 100%;">
+            <div class="card-header flex-header">
+                <div>
+                    <h3>Rekapitulasi Global Seluruh Servis</h3>
+                    <p>Data terpusat dari input Kasir, Teknisi, dan Pendaftaran Mandiri Pelanggan</p>
+                </div>
+                <div class="search-box">
+                    <input type="text" id="adminSearchInput" placeholder="Cari Nota / Pelanggan...">
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>No. Nota & Sumber</th>
+                            <th>Pelanggan & Unit</th>
+                            <th>Tindakan Teknisi</th>
+                            <th>Metode Bayar</th>
+                            <th>Total Biaya</th>
+                            <th>Status Perangkat</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelAdminBody">
+                        <!-- Diisi otomatis oleh admin.js -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- JS Terpisah -->
+    <script src="js/admin.js"></script>
+</body>
+</html>

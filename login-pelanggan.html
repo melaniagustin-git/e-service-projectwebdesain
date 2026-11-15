@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Pelanggan - Nanda Computer</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS Terpisah -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login-pelanggan.css">
+</head>
+<body>
+
+    <div class="auth-card">
+        <div class="auth-header">
+            <img src="img/logo.png" alt="Logo">
+            <h1>Nanda Computer</h1>
+            <span class="badge-pelanggan">✨ Portal Pelanggan / Member</span>
+        </div>
+
+        <form id="loginPelangganForm">
+            <div class="form-group">
+                <label>NAMA LENGKAP / EMAIL</label>
+                <input type="text" id="namaPelanggan" placeholder="Masukkan nama atau email Anda" required>
+            </div>
+            <div class="form-group">
+                <label>KATA SANDI</label>
+                <input type="password" id="passwordPelanggan" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="btn-submit">Masuk ke Portal Pelanggan</button>
+        </form>
+
+        <div class="register-info">
+            Belum punya akun? <a href="register.html">Daftar sekarang</a>
+        </div>
+
+        <a href="index.html" class="back-link">← Kembali ke Beranda Utama</a>
+    </div>
+
+    <!-- JS Terpisah -->
+    <script src="js/login-pelanggan.js"></script>
+</body>
+</html>

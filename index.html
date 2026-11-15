@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nanda Computer Karawang - Pusat Servis & Solusi Perangkat Modern</title>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS Global & CSS Khusus Landing Page -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+
+    <!-- Efek Cahaya Interaktif Mengikuti Kursor -->
+    <div id="mouseGlow" class="mouse-glow"></div>
+
+    <!-- Header Navbar -->
+    <header class="landing-navbar">
+        <div class="landing-brand">
+            <img src="img/logo.png" alt="Logo Nanda Computer" class="brand-logo-img">
+            <div class="brand-text">
+                <h1>NANDA COMPUTER</h1>
+                <span>Karawang • Authorized Service</span>
+            </div>
+        </div>
+        <div class="nav-actions">
+            <!-- Diubah mengarah ke login-staf.html -->
+            <a href="login-staf.html" class="btn-nav-outline">Masuk Staf</a>
+            <!-- Diubah mengarah ke login-pelanggan.html -->
+            <a href="login-pelanggan.html" class="btn-nav-solid">Portal Pelanggan</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="landing-hero">
+        <div class="hero-badge">
+            <span>✨ E-Service Portal v2.0 Professional</span>
+        </div>
+        <h2>Pusat Servis & Solusi Perangkat Modern di Karawang</h2>
+        <p>
+            Layanan perbaikan Laptop, PC Desktop, Printer, serta peningkatan performa perangkat dengan transparansi status pengerjaan secara <em>real-time</em>.
+        </p>
+        
+
+        <!-- Widget Pelacakan Nota Cepat -->
+        <div class="tracking-card">
+            <input type="text" id="quickNotaInput" placeholder="Masukkan No. Nota (contoh: SRV-20261113-002)...">
+            <button type="button" id="trackBtn">Lacak Status</button>
+        </div>
+    </main>
+    <div id="trackingResultModal" class="tracking-result-box" style="display: none;">
+            <div class="result-header">
+                <h4>Status Perangkat Anda</h4>
+                <button type="button" id="closeResultBtn">&times;</button>
+            </div>
+            <div class="result-body" id="resultBodyContent">
+                <!-- Hasil data akan dimasukkan via JavaScript -->
+            </div>
+        </div>
+
+    <!-- Grid Fitur & Layanan Utama -->
+    <section class="features-container">
+        <div class="feature-box">
+            <div class="feature-icon">💻</div>
+            <h3>Servis Laptop & PC Desktop</h3>
+            <p>Solusi tuntas kendala mati total, blue screen, penggantian layar LCD, keyboard rusak, hingga pembersihan sistem pendingin.</p>
+        </div>
+        <div class="feature-box">
+            <div class="feature-icon">⚡</div>
+            <h3>Upgrade & Optimasi</h3>
+            <p>Pemasangan SSD NVMe berkecepatan tinggi, penambahan kapasitas RAM, dan instalasi sistem operasi untuk performa maksimal.</p>
+        </div>
+        <div class="feature-box">
+            <div class="feature-icon">🖨️</div>
+            <h3>Perbaikan Printer & Periferal</h3>
+            <p>Servis printer infus, pergantian cartridge, perbaikan mekanisme penarikan kertas, serta perawatan perangkat kantor berkala.</p>
+        </div>
+    </section>
+
+    <!-- TAMBAHAN: Alur Layanan / How It Works -->
+    <!-- Alur Layanan Modern (Elips & Panah) -->
+    <section class="workflow-section">
+        <div class="section-title">
+            <h2>Alur Servis Modern & Transparan</h2>
+            <p>3 langkah mudah perbaikan perangkat di Nanda Computer</p>
+        </div>
+
+        <div class="workflow-flow-container">
+            <!-- Langkah 1 -->
+            <div class="workflow-step-item">
+                <div class="step-ellipse">01</div>
+                <h3>Pendaftaran & Diagnosa</h3>
+                <p>Bawa perangkat ke toko atau daftar online. Teknisi melakukan pengecekan awal.</p>
+            </div>
+
+            <!-- Tanda Panah -->
+            <div class="workflow-arrow">→</div>
+
+            <!-- Langkah 2 -->
+            <div class="workflow-step-item">
+                <div class="step-ellipse">02</div>
+                <h3>Konfirmasi & Pengerjaan</h3>
+                <p>Estimasi biaya dikonfirmasi sebelum perbaikan dikerjakan oleh teknisi ahli.</p>
+            </div>
+
+            <!-- Tanda Panah -->
+            <div class="workflow-arrow">→</div>
+
+            <!-- Langkah 3 -->
+            <div class="workflow-step-item">
+                <div class="step-ellipse">03</div>
+                <h3>Selesai & Pelunasan</h3>
+                <p>Perangkat siap diambil, nota pelunasan dicetak, dan garansi resmi diberikan.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TAMBAHAN: Informasi Kontak, Alamat, & Jam Operasional -->
+   <!-- Informasi Toko Modern (3 Kartu Elegan) -->
+    <section class="info-section">
+        <div class="info-container-modern">
+            <!-- Kartu Alamat -->
+            <div class="info-card-item">
+                <div class="info-icon-box">📍</div>
+                <h3>Lokasi Toko</h3>
+                <p>Jl. Arif Rahman Hakim No.76<br>Karawang Kulon, Kec. Karawang Bar., Kabupaten Karawang, Jawa Barat 41311</p>
+            </div>
+
+            <!-- Kartu Jam Operasional -->
+            <div class="info-card-item">
+                <div class="info-icon-box">⏰</div>
+                <h3>Jam Operasional</h3>
+                <p><strong>Senin – Jumat:</strong> 08.00 - 21.00 WIB<br><strong>Sabtu - Minggu:</strong> 09.00 - 21.00 WIB</p>
+            </div>
+
+            <!-- Kartu Kontak WhatsApp -->
+            <div class="info-card-item">
+                <div class="info-icon-box">💬</div>
+                <h3>Layanan Konsultasi</h3>
+                <p>Butuh bantuan cepat atau tanya kendala perangkat? Hubungi tim support kami.</p>
+                <div class="wa-info-text">
+                    <strong>📱 WhatsApp:</strong> 0857-7717-9189
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="landing-footer">
+        <p>&copy; 2026 Nanda Computer Karawang. All rights reserved.</p>
+    </footer>
+
+    <!-- JS Terpisah untuk Landing Page -->
+    <script src="js/landing.js"></script>
+</body>
+</html>

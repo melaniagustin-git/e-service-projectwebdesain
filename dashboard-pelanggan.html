@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Pelanggan - E-Service Nanda Computer</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS Terpisah -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pelanggan.css">
+</head>
+<body class="dashboard-body">
+
+    <!-- Top Navbar -->
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo-box">NC</div>
+                <div>
+                    <h1>NANDA COMPUTER</h1>
+                    <p>Dashboard Pelanggan | Pendaftaran Service & Monitoring</p>
+                </div>
+            </div>
+            <div class="nav-user">
+                <div class="user-info">
+                    <span class="user-name">Selamat datang, Pelanggan!</span>
+                </div>
+                <button id="logoutBtn" class="btn-logout">Keluar</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        
+        <!-- Banner Sambutan -->
+        <section class="welcome-banner">
+            <div class="banner-text">
+                <h2>Portal Layanan Mandiri Pelanggan 💻</h2>
+                <p>Daftarkan perbaikan perangkat secara online tanpa harus antre, dan pantau status pengerjaan servis perangkatmu secara real time.</p>
+            </div>
+        </section>
+
+        <!-- Grid Utama: Form Pendaftaran Online (Kiri) & Tabel Status Monitoring (Kanan) -->
+        <div class="content-grid-pelanggan">
+            
+            <!-- FORM PENDAFTARAN ONLINE -->
+            <div class="card form-card">
+                <div class="card-header">
+                    <h3>Form Pendaftaran Online</h3>
+                    <p>Isi data perangkat untuk antrean servis</p>
+                </div>
+
+                <form id="formPendaftaranOnline" class="service-form">
+                    <div class="form-group">
+                        <label>Nama Lengkap *</label>
+                        <input type="text" id="namaPelanggan">
+                    </div>
+
+                    <div class="form-group">
+                        <label>No. Handphone</label>
+                        <input type="tel" id="noHp">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Alamat Lengkap *</label>
+                        <input type="text" id="alamat">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Jenis Perangkat *</label>
+                            <select id="jenisPerangkat" required>
+                                <option value="Laptop">Laptop</option>
+                                <option value="PC Desktop">PC Desktop</option>
+                                <option value="Printer">Printer</option>
+                                <option value="Monitor">Monitor</option>
+                                <option value="Lainnya">Lainnya</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Merk / Tipe *</label>
+                            <input type="text" id="merkTipe">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Nomor Seri (Serial Number) *</label>
+                        <input type="text" id="nomorSeri" required placeholder="SN-XXXXX" style="font-family: monospace;">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Keluhan / Kerusakan *</label>
+                        <textarea id="keluhan" rows="3" required placeholder="Jelaskan kendala perangkat secara detail..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary">
+                        <span>Kirim Pendaftaran Online</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- TABEL MONITORING STATUS PERANGKAT -->
+            <div class="card table-card">
+                <div class="card-header flex-header">
+                    <div>
+                        <h3>Status Monitoring Perangkat</h3>
+                        <p>Pantau perkembangan perbaikan servis perangkatmu di sini</p>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>No. Nota</th>
+                                <th>Perangkat & Unit</th>
+                                <th>Tindakan & Biaya</th>
+                                <th>Status Pengerjaan</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelMonitoringBody">
+                            <!-- Diisi oleh pelanggan.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <!-- Custom Modern Popup Modal -->
+<div id="customModal" class="modal-overlay hidden">
+    <div class="modal-card">
+        <div class="modal-icon-header">🎉</div>
+        <h3 id="modalTitle">Pendaftaran Berhasil!</h3>
+        <p id="modalMessage">Nomor Nota Anda: <strong>SRV-000</strong></p>
+        <button id="modalCloseBtn" class="btn-primary" style="width: 100%; margin-top: 20px;">OK, Mengerti</button>
+    </div>
+</div>
+
+    <!-- JS Terpisah -->
+    <script src="js/pelanggan.js"></script>
+</body>
+</html>

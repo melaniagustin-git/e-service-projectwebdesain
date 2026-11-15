@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Kasir - E-Service Nanda Computer</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS Terpisah -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/kasir.css">
+</head>
+<body class="dashboard-body">
+<div class="mouse-glow"></div>
+
+    <!-- Top Navbar -->
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="img/logo.png" alt="Logo Nanda Computer" class="brand-logo-img" style="width: 44px; height: 44px; object-fit: contain; border-radius: 10px; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                <div>
+                    <h1>NANDA COMPUTER</h1>
+                    <p>Dashboard Kasir | E-Service Nanda Computer</p>
+                </div>
+            </div>
+            <div class="nav-user">
+                <div class="user-info">
+                    <span class="user-name">Selamat datang, Kasir!</span>
+                </div>
+                <button id="logoutBtn" class="btn-logout">Keluar</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        
+        <!-- Banner Sambutan -->
+        <section class="welcome-banner">
+            <div class="banner-text">
+                <h2>Kelola Transaksi & Servis Perangkat 💼</h2>
+                <p>Input pendaftaran pelanggan baru (offline/walk-in), cetak nota tanda terima, dan selesaikan pelunasan pembayaran dengan mudah.</p>
+            </div>
+            <div class="banner-date">
+                <span class="date-label">Tanggal Hari Ini</span>
+                <span id="dateDisplay" class="date-value">-</span>
+            </div>
+        </section>
+
+        <!-- Statistik Ringkasan -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-info">
+                    <span class="stat-title">Menunggu Diagnosa</span>
+                    <span id="statMenunggu" class="stat-number amber">0</span>
+                </div>
+                <div class="stat-icon amber-bg">⏳</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-info">
+                    <span class="stat-title">Siap Diambil (Tagihan)</span>
+                    <span id="statSiap" class="stat-number blue">0</span>
+                </div>
+                <div class="stat-icon blue-bg">🔔</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-info">
+                    <span class="stat-title">Selesai & Lunas</span>
+                    <span id="statLunas" class="stat-number green">0</span>
+                </div>
+                <div class="stat-icon green-bg">✓</div>
+            </div>
+        </section>
+
+        <!-- Grid Utama: Form Pendaftaran (Kiri) & Tabel Transaksi (Kanan) -->
+        <div class="content-grid">
+            
+            <!-- FORM PENDAFTARAN OFFLINE -->
+            <div class="card form-card">
+                <div class="card-header">
+                    <h3>Pendaftaran Servis</h3>
+                    <span id="previewNota" class="nota-badge">SRV-...</span>
+                </div>
+
+                <form id="formPendaftaran" class="service-form">
+                    <div class="form-group">
+                        <label>Nama Pelanggan *</label>
+                        <input type="text" id="namaPelanggan">
+                    </div>
+
+                    <div class="form-group">
+                        <label>No. Handphone / WhatsApp *</label>
+                        <input type="tel" id="noHp">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Alamat Lengkap *</label>
+                        <input type="text" id="alamat">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Jenis Perangkat *</label>
+                            <select id="jenisPerangkat" required>
+                                <option value="Laptop">Laptop</option>
+                                <option value="PC Desktop">PC Desktop</option>
+                                <option value="Printer">Printer</option>
+                                <option value="Monitor">Monitor</option>
+                                <option value="Lainnya">Lainnya</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Merk / Tipe *</label>
+                            <input type="text" id="merkTipe">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Nomor Seri (Serial Number) *</label>
+                        <input type="text" id="nomorSeri" style="font-family: monospace;">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Keluhan / Kerusakan Awal *</label>
+                        <textarea id="keluhan" rows="2.5" required placeholder="Jelaskan kendala perangkat..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary">
+                        <span>+ Simpan & Cetak Nota Awal</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- TABEL DAFTAR SERVIS TERPUSAT (Online & Offline) -->
+            <div class="card table-card">
+                <div class="card-header flex-header">
+                    <div>
+                        <h3>Daftar Seluruh Servis Perangkat</h3>
+                        <p>Sinkronisasi data pendaftaran toko dan pendaftaran online web</p>
+                    </div>
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Cari No. Nota / Nama...">
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>No. Nota & Sumber</th>
+                                <th>Pelanggan & Unit</th>
+                                <th>Tindakan Teknisi</th>
+                                <th>Total Biaya</th>
+                                <th>Status</th>
+                                <th class="text-center">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelServisBody">
+                            <!-- Diisi oleh kasir.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- MODAL PEMBAYARAN & KALKULATOR KEMBALIAN -->
+    <div id="modalBayar" class="modal-overlay hidden">
+        <div class="modal-box">
+            <div class="modal-header">
+                <div>
+                    <h3>Pembayaran & Pelunasan</h3>
+                    <p id="modalNotaTitle" class="modal-sub">SRV-...</p>
+                </div>
+                <button type="button" id="closeModalBtn" class="modal-close">&times;</button>
+            </div>
+
+            <form id="formPembayaran" class="modal-form">
+                <div class="modal-info-box">
+                    <div class="info-row">
+                        <span>Pelanggan:</span>
+                        <strong id="modalNama">-</strong>
+                    </div>
+                    <div class="info-row">
+                        <span>Perangkat:</span>
+                        <span id="modalUnit">-</span>
+                    </div>
+                    <div class="info-row">
+                        <span>Tindakan:</span>
+                        <span id="modalTindakan" class="text-right">-</span>
+                    </div>
+                    <div class="info-row total-row">
+                        <span>Total Tagihan:</span>
+                        <strong id="modalTagihan" class="text-blue">Rp 0</strong>
+                    </div>
+                </div>
+                <!-- Tambahan Pilihan Metode Pembayaran -->
+                <div class="form-group" style="margin-top: 16px;">
+                    <label>Metode Pembayaran *</label>
+                    <select id="inputMetodeBayar" class="form-control" style="width: 100%; padding: 10px; border-radius: 10px; border: 1.5px solid var(--border-light); background: #F8FAFC; font-size: 13px;">
+                        <option value="Tunai (Cash)">💵 Tunai (Cash)</option>
+                        <option value="QRIS / Transfer (Cashless)">📱 QRIS / Transfer (Cashless)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Uang Diterima / Bayar (Rp) *</label>
+                    <input type="number" id="inputUangBayar" required min="0" placeholder="Masukkan jumlah uang...">
+                </div>
+
+                <div class="kembalian-box">
+                    <span>Uang Kembalian:</span>
+                    <strong id="displayKembalian" class="text-green">Rp 0</strong>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" id="cancelModalBtn" class="btn-secondary">Batal</button>
+                    <button type="submit" id="btnKonfirmasiBayar" disabled class="btn-success">Lunasi & Cetak Nota</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- AREA CETAK NOTA (Tersembunyi di layar, muncul saat cetak) -->
+    <div id="printArea" class="hidden">
+        <div class="print-receipt">
+            <div class="receipt-header">
+                <h2>NANDA COMPUTER KARAWANG</h2>
+                <p>Pusat Servis Laptop, PC & Penjualan Sparepart</p>
+                <span id="notaJenisJudul" class="receipt-badge">NOTA TANDA TERIMA SERVIS</span>
+            </div>
+            <div class="receipt-body">
+                <p><strong>No. Nota :</strong> <span id="cetakNota"></span></p>
+                <p><strong>Sumber   :</strong> <span id="cetakSumber"></span></p>
+                <p><strong>Tanggal  :</strong> <span id="cetakTanggal"></span></p>
+                <p><strong>Pelanggan:</strong> <span id="cetakNama"></span> (<span id="cetakHp"></span>)</p>
+                <p><strong>Perangkat:</strong> <span id="cetakUnit"></span></p>
+                <p><strong>No. Seri :</strong> <span id="cetakSn"></span></p>
+                <p><strong>Keluhan  :</strong> <span id="cetakKeluhan"></span></p>
+            </div>
+            <div class="receipt-footer-info">
+                <p><strong>Tindakan :</strong> <span id="cetakTindakan"></span></p>
+                <p><strong>Biaya Jasa:</strong> <span id="cetakJasa"></span></p>
+                <p><strong>Sparepart :</strong> <span id="cetakSparepart"></span></p>
+                <p class="receipt-total">TOTAL BIAYA: <span id="cetakTotal"></span></p>
+                <p id="cetakRowBayar"><strong>Uang Bayar :</strong> <span id="cetakBayar"></span></p>
+                <p id="cetakRowKembali"><strong>Kembalian  :</strong> <span id="cetakKembali"></span></p>
+                <p><strong>Metode Bayar:</strong> <span id="cetakMetode"></span></p>
+            </div>
+            <div class="receipt-bottom-note">
+                <p><strong>STATUS: <span id="cetakStatus"></span></strong></p>
+                <p class="small-text">Terima kasih telah mempercayakan perangkat Anda di Nanda Computer.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Terpisah -->
+    <script src="js/kasir.js"></script>
+</body>
+</html>

@@ -1,0 +1,624 @@
+/* ==========================================================================
+   LANDING PAGE STYLING (Soft Aero Blue Theme)
+   ========================================================================== */
+:root {
+    --primary-blue: #3B82F6;
+    --dark-slate: #0F172A;
+    --light-bg: #F8FAFC;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--light-bg);
+    color: var(--dark-slate);
+    margin: 0;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Navbar Landing */
+.landing-navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.landing-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brand-logo-img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.brand-text h1 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--dark-slate);
+    margin: 0;
+}
+
+.brand-text span {
+    font-size: 11px;
+    color: #64748B;
+    font-weight: 500;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.btn-nav-outline {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1.5px solid #E2E8F0;
+    color: #334155;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.btn-nav-outline:hover {
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+.btn-nav-solid {
+    padding: 10px 22px;
+    background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+    color: white;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 13px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    transition: all 0.2s;
+}
+
+.btn-nav-solid:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+}
+
+/* Hero Section */
+.landing-hero {
+    max-width: 900px;
+    margin: 40px auto 60px auto;
+    text-align: center;
+    padding: 0 24px;
+    position: relative;
+    z-index: 10;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    color: #2563EB;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.landing-hero h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--dark-slate);
+    line-height: 1.25;
+    margin-bottom: 18px;
+}
+
+.landing-hero p {
+    font-size: 16px;
+    color: #475569;
+    line-height: 1.6;
+    max-width: 680px;
+    margin: 0 auto 32px auto;
+}
+
+/* Tracking Card */
+.tracking-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.12);
+    max-width: 580px;
+    margin: 0 auto;
+    display: flex;
+    gap: 12px;
+}
+
+.tracking-card input {
+    flex: 1;
+    padding: 14px 18px;
+    background: #F8FAFC;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 14px;
+    font-size: 14px;
+    color: var(--dark-slate);
+    outline: none;
+    transition: all 0.2s;
+}
+
+.tracking-card input:focus {
+    border-color: var(--primary-blue);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.tracking-card button {
+    padding: 0 24px;
+    background: #0F172A;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.tracking-card button:hover {
+    background: #1E293B;
+}
+
+/* Features Container */
+.features-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px 80px 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    position: relative;
+    z-index: 10;
+}
+
+.feature-box {
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(59, 130, 246, 0.08);
+    border-color: #BFDBFE;
+}
+
+.feature-icon {
+    width: 52px;
+    height: 52px;
+    background: #EFF6FF;
+    color: #2563EB;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.feature-box h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dark-slate);
+    margin-bottom: 10px;
+}
+
+.feature-box p {
+    font-size: 14px;
+    color: #64748B;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Footer */
+.landing-footer {
+    width: 100vw; /* Mengambil lebar penuh layar */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background: #FFFFFF;
+    border-top: 1px solid #E2E8F0;
+    padding: 32px 24px;
+    text-align: center;
+    color: #64748B;
+    font-size: 13px;
+    margin-top: 60px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 860px) {
+    .features-container { grid-template-columns: 1fr; }
+    .landing-hero h2 { font-size: 32px; }
+    .tracking-card { flex-direction: column; }
+}
+/* ==========================================================================
+   ALUR LAYANAN MODERN (Elips & Tanda Panah Minimalis)
+   ========================================================================== */
+.workflow-section {
+    max-width: 1200px;
+    margin: 0 auto 80px auto;
+    padding: 0 24px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--dark-slate);
+    margin-bottom: 8px;
+}
+
+.section-title p {
+    font-size: 14px;
+    color: #64748B;
+    margin: 0;
+}
+
+.workflow-flow-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.workflow-step-item {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.workflow-step-item:hover {
+    transform: translateY(-4px);
+}
+
+/* Elips / Lingkaran Nomor Modern */
+.step-ellipse {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+    color: #2563EB;
+    border: 2px solid #BFDBFE;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.workflow-step-item h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--dark-slate);
+    margin-bottom: 8px;
+}
+
+.workflow-step-item p {
+    font-size: 13px;
+    color: #64748B;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 260px;
+}
+
+/* Tanda Panah Penghubung */
+.workflow-arrow {
+    font-size: 24px;
+    font-weight: 700;
+    color: #94A3B8;
+    padding-bottom: 24px;
+}
+
+/* Responsif untuk Layar Mobile */
+@media (max-width: 860px) {
+    .workflow-flow-container {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .workflow-arrow {
+        transform: rotate(90deg);
+        padding: 0;
+        margin: 10px 0;
+    }
+}/* ==========================================================================
+   INFORMASI TOKO MODERN (Grid Cards)
+   ========================================================================== */
+.info-section {
+    max-width: 1200px;
+    margin: 0 auto 80px auto;
+    padding: 0 24px;
+}
+
+.info-container-modern {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.info-card-item {
+    background: white;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s, border-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.info-card-item:hover {
+    transform: translateY(-4px);
+    border-color: #93C5FD;
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.06);
+}
+
+.info-icon-box {
+    width: 48px;
+    height: 48px;
+    background: #EFF6FF;
+    color: #2563EB;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.1);
+}
+
+.info-card-item h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--dark-slate);
+    margin-bottom: 8px;
+}
+
+.info-card-item p {
+    font-size: 13px;
+    color: #64748B;
+    line-height: 1.6;
+    margin: 0 0 16px 0;
+    flex-grow: 1;
+}
+
+.wa-btn-modern {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #059669;
+    color: white;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.wa-btn-modern:hover {
+    background: #047857;
+    transform: translateY(-1px);
+}
+
+/* Responsif untuk Layar Mobile */
+@media (max-width: 860px) {
+    .info-container-modern {
+        grid-template-columns: 1fr;
+    }
+}
+/* Styling Informasi Nomor WhatsApp */
+.wa-info-text {
+    background: #F8FAFC;
+    border: 1.5px dashed #CBD5E1;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 13px;
+    color: var(--dark-slate);
+    width: 100%;
+    box-sizing: border-box;
+    font-weight: 600;
+}
+/* ==========================================================================
+   PERBAIKAN KOTAK HASIL LACAK NOTA
+   ========================================================================== */
+.tracking-result-box {
+    margin: 24px auto 32px auto; /* Memberikan jarak atas & bawah yang pas */
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 20px;
+    padding: 24px;
+    max-width: 600px;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+    text-align: left;
+    position: relative;
+    z-index: 20; /* Memastikan kotak selalu berada di atas elemen lain */
+    animation: fadeInDown 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1.5px solid #F1F5F9;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+}
+
+.result-header h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #0F172A;
+}
+
+#closeResultBtn {
+    background: #F1F5F9;
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    color: #64748B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+#closeResultBtn:hover {
+    background: #E2E8F0;
+    color: #0F172A;
+}
+
+.result-body p {
+    font-size: 14px;
+    color: #334155;
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.badge-status {
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.badge-status.proses {
+    background: #FEF3C7;
+    color: #D97706;
+}
+
+.badge-status.notfound {
+    background: #FEE2E2;
+    color: #DC2626;
+}
+
+.est-text {
+    font-size: 13px;
+    color: #059669;
+    font-weight: 600;
+    margin-top: 14px !important;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ==========================================================================
+   1. LATAR BELAKANG GRADASI BIRU-PUTIH (SOFT AERO BLUE)
+   ========================================================================== */
+body {
+    background: linear-gradient(180deg, #E0F2FE 0%, #F0F9FF 28%, #F8FAFC 65%, #FFFFFF 100%);
+    min-height: 100vh;
+    margin: 0;
+    color: #0F172A;
+}
+
+/* ==========================================================================
+   2. NAVBAR GLASSMORPHISM (EFEK KACA TRANSPARAN)
+   ========================================================================== */
+.landing-navbar {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(186, 230, 253, 0.6);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* ==========================================================================
+   3. AKSEN GRADASI PADA JUDUL UTAMA (HERO TITLE)
+   ========================================================================== */
+.landing-hero h2, 
+.hero-title {
+    background: linear-gradient(135deg, #0F172A 35%, #1D4ED8 75%, #0284C7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================================================
+   4. PERCANTIK KOTAK LACAK NOTA & TOMBOLNYA
+   ========================================================================== */
+.tracking-card {
+    background: rgba(255, 255, 255, 0.92);
+    border: 1.5px solid #BAE6FD;
+    box-shadow: 0 15px 35px -5px rgba(2, 132, 199, 0.12), 0 4px 12px rgba(15, 23, 42, 0.03);
+}
+
+#trackBtn {
+    background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%);
+    color: #FFFFFF;
+    border: none;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#trackBtn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
+}
+
+/* ==========================================================================
+   5. AKSEN HALUS PADA KARTU FITUR & ALUR LAYANAN
+   ========================================================================== */
+.feature-card, 
+.workflow-section {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1.5px solid #E0F2FE;
+    box-shadow: 0 8px 24px rgba(14, 165, 233, 0.04);
+}

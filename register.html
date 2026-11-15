@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Akun Pelanggan - Nanda Computer</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login-pelanggan.css"> <!-- Memakai CSS card yang sama agar konsisten -->
+</head>
+<body>
+
+    <div class="auth-card">
+        <div class="auth-header">
+            <img src="img/logo.png" alt="Logo">
+            <h1>Nanda Computer</h1>
+            <span class="badge-pelanggan">✨ Pendaftaran Member Baru</span>
+        </div>
+
+        <form id="registerForm">
+            <div class="form-group">
+                <label>NAMA LENGKAP</label>
+                <input type="text" id="regNama">
+            </div>
+            <div class="form-group">
+                <label>EMAIL / USERNAME</label>
+                <input type="text" id="regEmail">
+            </div>
+            <div class="form-group">
+                <label>KATA SANDI</label>
+                <input type="password" id="regPassword">
+            </div>
+            <button type="submit" class="btn-submit">Daftar Akun Sekarang</button>
+        </form>
+
+        <div class="register-info">
+            Sudah punya akun? <a href="login-pelanggan.html">Masuk di sini</a>
+        </div>
+
+        <a href="index.html" class="back-link">← Kembali ke Beranda Utama</a>
+    </div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Registrasi berhasil! Silakan masuk menggunakan akun Anda.');
+            window.location.href = 'login-pelanggan.html';
+        });
+    </script>
+</body>
+</html>

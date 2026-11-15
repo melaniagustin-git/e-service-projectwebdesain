@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Staf Internal - Nanda Computer</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS Terpisah -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login-staf.css">
+</head>
+<body>
+    <div class="auth-card">
+        <div class="auth-header">
+            <img src="img/logo.png" alt="Logo">
+            <h1>Nanda Computer</h1>
+            <span class="badge-staf">🔒 Portal Staf Internal</span>
+        </div>
+
+        <form id="loginStafForm">
+            <div class="form-group">
+                <label>USERNAME STAF</label>
+                <input type="text" id="usernameStaf" placeholder="admin / kasir / teknisi" required>
+            </div>
+            <div class="form-group">
+                <label>PASSWORD</label>
+                <input type="password" id="passwordStaf" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="btn-submit">Masuk ke Dashboard</button>
+        </form>
+
+        <a href="index.html" class="back-link">← Kembali ke Beranda Utama</a>
+    </div>
+
+    <!-- JS Terpisah -->
+    <script src="js/login-staf.js"></script>
+</body>
+</html>
